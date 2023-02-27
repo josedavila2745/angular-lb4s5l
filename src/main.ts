@@ -28,12 +28,12 @@ export class App implements OnInit{
   anterior=-1;
   actual=-1;
 
-  addItem(newItem: number) {
-    this.actual=newItem;
+  addItem(newItem: string) {
+    this.actual=parseInt(newItem);
     if (this.items.length!=0){
       this.anterior=this.items[this.items.length]
     }
-    this.items.push(newItem);
+    this.items.push(this.actual);
     alert(this.items);
   }
 
