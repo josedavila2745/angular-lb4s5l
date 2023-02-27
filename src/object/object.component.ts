@@ -24,6 +24,9 @@ export class ObjectComponent {
     this.cambia();
     this.clickado.emit(this.img.toString());
   }
+  ngDoCheck() {
+console.log(this.img)
+  }
   cambia() {
     if (this.nocolapsado) {
       if(this.dorso==this.dorso0){this.dorso=this.dorso1;}else{this.dorso=this.dorso0;}

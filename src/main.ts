@@ -61,9 +61,7 @@ export class App implements OnInit{
       this.vals.push(this.valo[i][0]);
     }
   }
-  ngDoCheck() {
 
-  }
 }
 
 bootstrapApplication(App);
