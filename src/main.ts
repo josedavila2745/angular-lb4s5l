@@ -24,7 +24,7 @@ export class App implements OnInit{
   vala: number[][]=[];
   valo: number[][]=[];
   vals: number[]=[];
-  items = [];
+  items:number[] = [];
   anterior=-1;
   actual=-1;
 
