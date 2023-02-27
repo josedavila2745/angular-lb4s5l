@@ -24,6 +24,18 @@ export class App implements OnInit{
   vala: number[][]=[];
   valo: number[][]=[];
   vals: number[]=[];
+  items = [];
+  anterior=-1;
+  actual=-1;
+
+  addItem(newItem: number) {
+    this.actual=newItem;
+    if (this.items.length!=0){
+      this.anterior=this.items[this.items.length]
+    }
+    this.items.push(newItem);
+  }
+
   ngOnInit() {
     this.imgs=[
       {id:0,name:'Batido',                  url:'https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fbatido.png?alt=media&token=b4c6c9ec-e931-4ce2-a94d-a8e1e5083ea8'},
