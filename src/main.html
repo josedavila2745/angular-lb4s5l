@@ -6,7 +6,7 @@
         <section class="grid-1 ">
             <div *ngFor="let elem of vals;let idx=index;">
                 <div class="item-{{idx+1}}">
-                    <app-object [ido]=idx [dorso1]=imgs[vals[idx]].url></app-object>
+                    <app-object [ido]=idx [img]=vals[idx] [dorso1]=imgs[vals[idx]].url></app-object>
                 </div>
             </div>
         </section>

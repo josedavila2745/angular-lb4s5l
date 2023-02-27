@@ -9,7 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ObjectComponent implements OnInit {
   @Input() dorso1!: string;
   @Input() ido!: number;
-  dorso0 = "imgs/dorso2.jpg";
+  @Input() img!: number;
+  dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   dorso = this.dorso0;
   nocolapsado = 1;
   actual = '';
@@ -19,7 +20,10 @@ export class ObjectComponent implements OnInit {
   ngOnInit() {
   }
   cambia() {
-    if(this.dorso==this.dorso0){this.dorso=this.dorso1;}else{this.dorso=this.dorso0;}
+    if (this.nocolapsado) {
+      if(this.dorso==this.dorso0){this.dorso=this.dorso1;}else{this.dorso=this.dorso0;}
+    }
+
 
     /*console.log(this.ido," ",this.dorso1);
     if (this.nocolapsado) {
