@@ -34,7 +34,7 @@ export class App implements OnInit{
       this.anterior=this.items[this.items.length]
     }
     this.items.push(this.actual);
-    alert(this.items);
+    console.log(this.items);
   }
 
   ngOnInit() {
