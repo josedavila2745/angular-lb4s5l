@@ -11,7 +11,7 @@ export class ObjectComponent {
   @Input() dorso1!: string;
   @Input() ido!: number;
   @Input() img!: number;
-  @Output() clickado = new EventEmitter<number>();
+  @Output() clickado = new EventEmitter<string>();
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   dorso = this.dorso0;
   nocolapsado = 1;
@@ -23,7 +23,7 @@ export class ObjectComponent {
   fueClickado() {
     this.cambia();
     console.log("emit: ",this.img);
-    this.clickado.emit(this.img);
+    this.clickado.emit(this.img.toString());
   }
   cambia() {
     if (this.nocolapsado) {
