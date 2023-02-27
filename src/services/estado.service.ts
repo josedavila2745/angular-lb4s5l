@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class EstadoService {
-  private estado:number=0;
+  private estado:number[]=[];
 
   constructor() { }
   public setEstado(v:number):void{
-      this.estado=v;
+      this.estado.push(v);
   }
-  public getEstado():number{
+  public getEstado():number[]{
     return(this.estado);}
 
 }
