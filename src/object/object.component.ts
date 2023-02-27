@@ -18,16 +18,18 @@ export class ObjectComponent {
   nocolapsado = 1;
   actual = '';
 
-  constructor(private estado: EstadoService) { }
+  constructor(public edo: EstadoService) { 
+    this.edo.getEstado;
+  }
 
  
   fueClickado() {
-    this.estado.setEstado(this.img);
+    this.edo.setEstado(this.img);
     this.clickado.emit(this.img.toString());
   }
   ngDoCheck() {
     this.cambia();
-    console.log(this.estado.getEstado())
+    console.log(this.edo.getEstado())
   }
   cambia() {
     if (this.nocolapsado) {
