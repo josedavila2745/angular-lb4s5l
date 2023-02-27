@@ -29,13 +29,11 @@ export class App implements OnInit{
   actual=-1;
 
   addItem(newItem: string) {
-    console.log("entro");
     this.actual=parseInt(newItem);
     if (this.items.length!=0){
       this.anterior=this.items[this.items.length]
     }
     this.items.push(this.actual);
-    console.log(this.items);
   }
 
   ngOnInit() {
