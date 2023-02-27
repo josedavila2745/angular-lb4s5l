@@ -1,0 +1,15 @@
+<div class="position-relative text-center base">
+<div class="">
+    <h1 class="claro brillo">Productos Angel Breña</h1>
+    <h2 class="claro brillo">Juego de memoria</h2>
+    <div class="container-fluid ">
+        <section class="grid-1 ">
+            <div *ngFor="let elem of vals;let idx=index;">
+                <div class="item-{{idx+1}}">
+                    <app-object [ido]=idx [dorso1]=imgs[vals[idx]].url></app-object>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>

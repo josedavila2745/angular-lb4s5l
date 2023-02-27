@@ -1,0 +1,14 @@
+/* Add application styles & imports to this file! */
+.base {
+  background-image: url('./assets/imgs/fondo.jpg');
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.claro {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 1px rgb(185, 132, 16);
+  text-shadow: 0 0 70px #f1ecf0;
+}
