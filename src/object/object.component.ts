@@ -1,5 +1,6 @@
 import { Component, Input, DoCheck } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
+import { EstadoService } from '../services/estado.service';
 
 @Component({
   selector: 'app-object',
@@ -17,7 +18,7 @@ export class ObjectComponent {
   nocolapsado = 1;
   actual = '';
 
-  constructor() { }
+  constructor(private estado: EstadoService) { }
 
  
   fueClickado() {
