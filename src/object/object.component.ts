@@ -7,7 +7,7 @@ import { Output, EventEmitter } from '@angular/core';
   templateUrl: './object.component.html',
   styleUrls: ['./object.component.css']
 })
-export class ObjectComponent implements {
+export class ObjectComponent {
   @Input() dorso1!: string;
   @Input() ido!: number;
   @Input() img!: number;
