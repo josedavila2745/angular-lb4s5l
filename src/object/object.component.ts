@@ -29,7 +29,7 @@ export class ObjectComponent {
   }
   ngDoCheck() {
     this.cambia();
-    console.log(this.edo.getEstado())
+    console.log("uuu: ",this.edo.getEstado())
   }
   cambia() {
     if (this.nocolapsado) {
