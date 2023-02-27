@@ -19,7 +19,7 @@ export class ObjectComponent {
   actual = '';
 
   constructor(public edo: EstadoService) { 
-    this.edo.getEstado;
+    this.edo.getEstado();
   }
 
  
