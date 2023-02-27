@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-object',
@@ -6,10 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './object.component.html',
   styleUrls: ['./object.component.css']
 })
-export class ObjectComponent implements OnInit {
+export class ObjectComponent implements {
   @Input() dorso1!: string;
   @Input() ido!: number;
   @Input() img!: number;
+  @Output() clickado = new EventEmitter<string>();
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   dorso = this.dorso0;
   nocolapsado = 1;
@@ -17,7 +19,10 @@ export class ObjectComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+ 
+  fueClickado(value: string) {
+    this.cambia();
+    this.clickado.emit(value);
   }
   cambia() {
     if (this.nocolapsado) {
