@@ -22,7 +22,7 @@ export class ObjectComponent {
 
  
   fueClickado() {
-
+    this.estado=this.img;
     this.clickado.emit(this.img.toString());
   }
   ngDoCheck() {
