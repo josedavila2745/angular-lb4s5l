@@ -16,6 +16,7 @@ export class ObjectComponent {
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   dorso = this.dorso0;
   nocolapsado = 1;
+  clicks:number[];
 
   constructor(public edo: EstadoService) { 
     this.edo.getEstado();
@@ -23,12 +24,16 @@ export class ObjectComponent {
 
  
   fueClickado() {
+    this.cambia();
     this.edo.setEstado(this.img);
     this.clickado.emit(this.img.toString());
   }
   ngDoCheck() {
-    this.cambia();
-    console.log("uuu: ",this.edo.getEstado())
+    this.clicks=this.edo.getEstado();
+    if(this.clicks.length>1){
+      this.cambia();      
+    }
+
   }
   cambia() {
     if (this.nocolapsado) {
