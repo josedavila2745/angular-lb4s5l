@@ -21,10 +21,11 @@ export class ObjectComponent {
 
  
   fueClickado() {
-    this.cambia();
+
+    this.clickado.emit(this.img.toString());
   }
   ngDoCheck() {
-    this.clickado.emit(this.img.toString());
+    this.cambia();
   }
   cambia() {
     if (this.nocolapsado) {
