@@ -22,6 +22,7 @@ export class ObjectComponent {
  
   fueClickado() {
     this.cambia();
+    console.log(this.img);
     this.clickado.emit(this.img);
   }
   cambia() {
