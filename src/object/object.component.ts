@@ -22,11 +22,12 @@ export class ObjectComponent {
 
  
   fueClickado() {
-    this.estado=this.img;
+    this.estado.setEstado(this.img);
     this.clickado.emit(this.img.toString());
   }
   ngDoCheck() {
     this.cambia();
+    console.log(this.estado.getEstado())
   }
   cambia() {
     if (this.nocolapsado) {

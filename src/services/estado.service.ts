@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class EstadoService {
-  private estado=0;
+  private estado:number=0;
 
   constructor() { }
   public setEstado(v:number):void{
