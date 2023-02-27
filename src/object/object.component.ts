@@ -25,7 +25,8 @@ export class ObjectComponent {
     this.clickado.emit(this.img.toString());
   }
   ngDoCheck() {
-console.log(this.img)
+    console.log("----------------------------------------------------------------------");
+    console.log(this.img);
   }
   cambia() {
     if (this.nocolapsado) {
