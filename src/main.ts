@@ -1,5 +1,5 @@
 import 'zone.js/dist/zone';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,DoCheck } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { ObjectComponent } from './object/object.component';
@@ -61,7 +61,9 @@ export class App implements OnInit{
       this.vals.push(this.valo[i][0]);
     }
   }
+  ngDoCheck() {
 
+  }
 }
 
 bootstrapApplication(App);
