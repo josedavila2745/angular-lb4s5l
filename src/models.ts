@@ -1,3 +1,5 @@
 export interface Edo {
-  objedo:{conteo:number, hist: number};  
+  conteo:number;
+  img: number;
+  ido: number;  
 }

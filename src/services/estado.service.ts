@@ -5,11 +5,10 @@ import{Edo} from '../models'
   providedIn: 'root',
 })
 export class EstadoService {
-  private estado:Edo[];
+  private estado:Edo[]=[{conteo:0,img:-1,ido:-1}];
+  
 
-  constructor() { 
-    this.estado.push({conteo:0,hist:-1})
-  }
+  constructor() {}
   public setEstado(v:Edo):void{
       this.estado.push(v);
   }

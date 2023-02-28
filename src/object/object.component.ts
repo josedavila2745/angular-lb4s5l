@@ -17,30 +17,86 @@ export class ObjectComponent {
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   dorso = this.dorso0;
   nocolapsado = 1;
+  endorso = 1;
   clicks:Edo[];
   click1:Edo;
   click2:Edo;
-
   constructor(public edo: EstadoService) { }
-
- 
   fueClickado() {
-    /*/console.log("clic: ", this.img);
-    this.cambia(); 
-    this.edo.setEstado(this.img);
-    this.clickado.emit(this.img.toString());*/
+    this.clicks=this.edo.getEstado();
+    console.log("clicks: ", this.clicks); 
+    let long=this.clicks.length;
+    if(this.clicks[long-1].ido!=this.ido){
+      this.dorso=this.dorso1;
+      this.edo.setEstado({conteo:(this.clicks[long-1].conteo+1),img:this.img,ido:this.ido});
+    }
+    /*this.clickado.emit(this.img.toString());
+
+    if(long==0){
+      this.cambia();
+      this.edo.setEstado({conteo:1,img:this.img,ido:this.ido});
+      this.endorso=0;
+    }else{
+      if(long==1){
+        if(this.endorso){
+          if(this.clicks[long-1].img==this.img){
+            this.cambia();
+            this.edo.setEstado({conteo:0,img:this.img,ido:this.ido});
+            this.nocolapsado=0;
+          }else{
+            this.cambia();
+            setTimeout(this.cambia,600);
+            this.edo.setEstado({conteo:0,img:this.img,ido:this.ido});
+          }
+        }
+      }else{
+        if(this.clicks[long-1].conteo==0){
+          this.cambia();
+          this.edo.setEstado({conteo:0,img:this.img,ido:this.ido});
+          this.endorso=0;
+        }else{
+          if(this.clicks[long-1].img==this.img){
+            this.cambia();
+            this.edo.setEstado({conteo:0,img:this.img,ido:this.ido});
+            this.endorso=0;
+            this.nocolapsado=0;
+          }else{
+            this.cambia();
+            setTimeout(this.cambia,600);
+            this.edo.setEstado({conteo:0,img:this.img,ido:this.ido});
+            this.endorso=1;
+          }
+
+        }
+      }
+    }*/
   }
   ngDoCheck() {
-    //console.log("docheck: ", this.img, " hist: ", this.clicks);
-    this.clicks=this.edo.getEstado();
-    let long=this.clicks.length;
-    if(long>1){
-      this.click1=this.clicks[long-1];this.click2=this.clicks[long];
-      if(this.click1.objedo.hist==this.click2.objedo.hist && this.click1.objedo.hist==this.img){
-        this.nocolapsado=0;
+    if(this.nocolapsado){
+      this.clicks=this.edo.getEstado();
+      console.log("clicks: ", this.clicks); 
+      let long=this.clicks.length;
+      if(this.clicks[long-1].conteo==2){
+        this.click1=this.clicks[long-2];this.click2=this.clicks[long-1];
+        this.edo.setEstado({conteo:0,img:-1,ido:-1});
+        if(this.click1.img==this.click2.img && this.click1.img==this.img ){
+          this.nocolapsado=0;
+        }else{
+          this.dorso=this.dorso1;
+          this.edo.setEstado({conteo:0,img:-1,ido:-1});
+        }
       }
-      this.cambia();      
     }
+
+    /*/
+    if(long>1){
+      
+      if(this.click1.img!=this.click2.img ){
+        this.cambia();  
+      }
+   
+ 
+    }*/
 
   }
   cambia() {
