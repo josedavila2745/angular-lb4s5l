@@ -1,6 +1,7 @@
 import { Component, Input, DoCheck } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { EstadoService } from '../services/estado.service';
+import{Edo} from '../models'
 
 @Component({
   selector: 'app-object',
@@ -16,7 +17,9 @@ export class ObjectComponent {
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   dorso = this.dorso0;
   nocolapsado = 1;
-  clicks:number[];
+  clicks:Edo[];
+  click1:Edo;
+  click2:Edo;
 
   constructor(public edo: EstadoService) { 
     this.edo.getEstado();
@@ -24,17 +27,18 @@ export class ObjectComponent {
 
  
   fueClickado() {
-    //console.log("clic: ", this.img);
+    /*/console.log("clic: ", this.img);
     this.cambia(); 
     this.edo.setEstado(this.img);
-    this.clickado.emit(this.img.toString());
+    this.clickado.emit(this.img.toString());*/
   }
   ngDoCheck() {
-    //console.log("docheck: ", this.img, " hist: ", this.clicks);
+    console.log("docheck: ", this.img, " hist: ", this.clicks);
     this.clicks=this.edo.getEstado();
     let long=this.clicks.length;
     if(long>1){
-      if(this.clicks[long]==this.clicks[long-1] && this.clicks[long]==this.img ){
+      this.click1=this.clicks[long-1];this.click2=this.clicks[long];
+      if(this.click1.hist==this.click2.hist && this.click1.hist==this.img ){
         this.nocolapsado=0;
       }
       this.cambia();      
