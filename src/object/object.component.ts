@@ -24,7 +24,7 @@ export class ObjectComponent {
   constructor(public edo: EstadoService) { }
   fueClickado() {
     this.clicks=this.edo.getEstado();
-    console.log("clicks: ", this.clicks); 
+    //console.log("clicks: ", this.clicks); 
     let long=this.clicks.length;
     if(this.clicks[long-1].ido!=this.ido){
       this.dorso=this.dorso1;
@@ -76,13 +76,13 @@ export class ObjectComponent {
       this.clicks=this.edo.getEstado();
       console.log("clicks: ", this.clicks); 
       let long=this.clicks.length;
-      if(this.clicks[long-1].conteo==2){
+      if(!(this.clicks[long-1].conteo<2)){
         this.click1=this.clicks[long-2];this.click2=this.clicks[long-1];
         this.edo.setEstado({conteo:0,img:-1,ido:-1});
         if(this.click1.img==this.click2.img && this.click1.img==this.img ){
           this.nocolapsado=0;
         }else{
-          this.dorso=this.dorso1;
+          this.dorso=this.dorso0;
           this.edo.setEstado({conteo:0,img:-1,ido:-1});
         }
       }
