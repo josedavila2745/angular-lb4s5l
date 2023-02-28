@@ -32,7 +32,11 @@ export class ObjectComponent {
   ngDoCheck() {
     //console.log("docheck: ", this.img, " hist: ", this.clicks);
     this.clicks=this.edo.getEstado();
-    if(this.clicks.length>1){
+    long=this.clicks.length;
+    if(long>1){
+      if(this.clicks[long]==this.clicks[long-1] && this.clicks[long]==this.img ){
+        this.nocolapsado=0;
+      }
       this.cambia();      
     }
 
