@@ -7,7 +7,9 @@ import{Edo} from '../models'
 export class EstadoService {
   private estado:Edo[];
 
-  constructor() { }
+  constructor() { 
+    this.estado.push({conteo:0,hist:-1})
+  }
   public setEstado(v:Edo):void{
       this.estado.push(v);
   }

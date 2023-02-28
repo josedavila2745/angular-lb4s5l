@@ -21,9 +21,7 @@ export class ObjectComponent {
   click1:Edo;
   click2:Edo;
 
-  constructor(public edo: EstadoService) { 
-    this.edo.getEstado();
-  }
+  constructor(public edo: EstadoService) { }
 
  
   fueClickado() {
@@ -33,12 +31,12 @@ export class ObjectComponent {
     this.clickado.emit(this.img.toString());*/
   }
   ngDoCheck() {
-    console.log("docheck: ", this.img, " hist: ", this.clicks);
+    //console.log("docheck: ", this.img, " hist: ", this.clicks);
     this.clicks=this.edo.getEstado();
     let long=this.clicks.length;
     if(long>1){
       this.click1=this.clicks[long-1];this.click2=this.clicks[long];
-      if(this.click1.hist==this.click2.hist && this.click1.hist==this.img ){
+      if(this.click1.objedo.hist==this.click2.objedo.hist && this.click1.objedo.hist==this.img){
         this.nocolapsado=0;
       }
       this.cambia();      
