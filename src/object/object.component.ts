@@ -24,13 +24,13 @@ export class ObjectComponent {
 
  
   fueClickado() {
-    console.log("clic: ", this.img);
+    //console.log("clic: ", this.img);
     this.cambia(); 
     this.edo.setEstado(this.img);
     this.clickado.emit(this.img.toString());
   }
   ngDoCheck() {
-    console.log("docheck: ", this.img);
+    //console.log("docheck: ", this.img, " hist: ", this.clicks);
     this.clicks=this.edo.getEstado();
     if(this.clicks.length>1){
       this.cambia();      
