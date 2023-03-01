@@ -16,7 +16,7 @@ export class ObjectComponent {
   @Output() clickado = new EventEmitter<string>();
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   frontal = this.frente;
-  dorso = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
+  dorso = (this.dorso1) ? this.frontal : this.dorso0;
   nocolapsado = 1;
   endorso = 1;
   clicks:Edo[];
