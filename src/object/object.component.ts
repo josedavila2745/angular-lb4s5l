@@ -31,7 +31,7 @@ export class ObjectComponent {
       if(this.clicks[long-1].ido!=this.ido){
         this.dorso=this.frontal;
         this.edo.setEstado({conteo:(this.clicks[long-1].conteo+1),img:this.img,ido:this.ido});
-        setTimeout(this.cambia, 500);
+        //setTimeout(this.cambia, 500);
     }
     }   
   }
