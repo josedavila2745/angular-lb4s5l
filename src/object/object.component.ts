@@ -9,10 +9,10 @@ import{Edo} from '../models'
   styleUrls: ['./object.component.css']
 })
 export class ObjectComponent {
-  @Input() dorso1!  : number;
   @Input() ido!     : number;
   @Input() img!     : number;
   @Input() frente!  : string;
+  @Input() dorso1!  : number;
   @Output() clickado = new EventEmitter<string>();
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   frontal = this.frente;
@@ -23,7 +23,7 @@ export class ObjectComponent {
   click1:Edo;
   click2:Edo;
   constructor(public edo: EstadoService) {
-    this.dorso0=edo.getImgDorso();
+    //this.dorso0=edo.getImgDorso();
    }
   fueClickado() {
     if(this.nocolapsado){
