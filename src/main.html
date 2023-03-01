@@ -5,9 +5,8 @@
     <div class="container-fluid ">
         <section class="grid-1 ">
             <div *ngFor="let elem of vals;let idx=index;">
-                <p> elem</p>
                 <div class="item-{{idx+1}}">
-                    <app-object [ido]=idx [img]=vals[idx] [frente]=imgs[vals[idx]].url [dorso1]=0  (clickado)="addItem($event)"></app-object>
+                    <app-object [ido]=idx [img]=elem [frente]=imgs[elem].url [dorso1]=1  (clickado)="addItem($event)"></app-object>
                 </div>
             </div>
         </section>
