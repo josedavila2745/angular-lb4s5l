@@ -21,8 +21,7 @@ export class App implements OnInit{
   valo: number[][]=[];
   vals: number[]=[];
   items:number[] = [];
-  anterior=-1;
-  actual=-1;
+  anterior=-1;  actual=-1;
   constructor(private vvistas: EstadoService) {
     vvistas.getVistas
    }
