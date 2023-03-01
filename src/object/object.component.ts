@@ -78,7 +78,7 @@ export class ObjectComponent {
 
   }*/
   cambia() {
-    console.log("Entro");
+    console.log(this.frontal)
     this.endorso=0;
     this.dorso=this.dorso0;
 
