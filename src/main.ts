@@ -25,15 +25,6 @@ export class App implements OnInit{
   constructor(private vvistas: EstadoService) {
     vvistas.getVistas
    }
-  addItem(newItem: string) {
-    //console.log("Ta:  ",newItem);
-    this.actual=parseInt(newItem);
-    if (this.items.length!=0){
-      this.anterior=this.items[this.items.length]
-    }
-    this.items.push(this.actual);
-
-  }
 
   ngOnInit() {
     this.imgs=this.vvistas.getvVistas();
@@ -47,6 +38,16 @@ export class App implements OnInit{
     for (var i = 0; i < 8; i++) {
       this.vals.push(this.valo[i][0]);
     }
+  }
+  
+  addItem(newItem: string) {
+    //console.log("Ta:  ",newItem);
+    this.actual=parseInt(newItem);
+    if (this.items.length!=0){
+      this.anterior=this.items[this.items.length]
+    }
+    this.items.push(this.actual);
+
   }
 
 }
