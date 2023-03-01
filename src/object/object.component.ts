@@ -22,9 +22,7 @@ export class ObjectComponent {
   clicks:Edo[];
   click1:Edo;
   click2:Edo;
-  constructor(public edo: EstadoService) {
-    //this.dorso0=edo.getImgDorso();
-   }
+  constructor(public edo: EstadoService) {}
   fueClickado() {
     if(this.nocolapsado){
       this.clicks=this.edo.getEstado();

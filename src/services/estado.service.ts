@@ -20,9 +20,6 @@ export class EstadoService {
     {id:9,name:'Nutrinmunocan',           url:'https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fnutrinmunican.png?alt=media&token=fdd063ad-2553-4cac-b072-94ec908232ee'},
     {id:10,name:'Sal de Maras',           url:'https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fsal_de_maras.png?alt=media&token=574e27d8-e337-404d-8b63-a6f98cbc5a56'},
   ];
-  private imgdorso="https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
-
-
   
   constructor() {}
   public setEstado(v:Edo):void{
@@ -42,7 +39,6 @@ export class EstadoService {
   }
   public getvVistas():ImgsType[]{
       return(this.vvistas);}  
-  public getImgDorso():string{
-      return(this.imgdorso);}    
+  
 
 }
