@@ -20,6 +20,7 @@ export class App implements OnInit{
   vala: number[][]=[];
   valo: number[][]=[];
   vals: number[]=[];
+  vists:number[]=[];
   items:number[] = [];
   anterior=-1;  actual=-1;
   constructor(private vvistas: EstadoService) {
@@ -34,19 +35,14 @@ export class App implements OnInit{
     for (var i = 0; i < 8; i++) {
       this.vals.push(this.valo[i][0]);
     }
+    this.vists=this.vvistas.getVistas();
    }
 
   ngOnInit() {
   }
 
   addItem(newItem: string) {
-    //console.log("Ta:  ",newItem);
-    this.actual=parseInt(newItem);
-    if (this.items.length!=0){
-      this.anterior=this.items[this.items.length]
-    }
-    this.items.push(this.actual);
-
+    this.vists=this.vvistas.getVistas();
   }
 
 }
