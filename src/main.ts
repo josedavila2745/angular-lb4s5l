@@ -38,8 +38,9 @@ export class App implements OnInit{
     for (var i = 0; i < 8; i++) {
       this.vals.push(this.valo[i][0]);
     }
+    console.log(this.vals)
   }
-  
+
   addItem(newItem: string) {
     //console.log("Ta:  ",newItem);
     this.actual=parseInt(newItem);
