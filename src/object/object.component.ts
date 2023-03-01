@@ -49,7 +49,7 @@ export class ObjectComponent implements OnInit{
         this.edo.setEstado({conteo:(this.clicks[long-1].conteo+1),img:this.img,ido:this.ido});
         //setTimeout(this.cambia, 500);
       }
-      if (this.clicks[long-1].conteo >1){
+      if (this.clicks[long-1].conteo > 1){
          this.mvistas=this.edo.getVistas();
         if(this.clicks[long-1].img==this.clicks[long-2].img)
            {

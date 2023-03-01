@@ -1,5 +1,5 @@
 import 'zone.js/dist/zone';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { ObjectComponent } from './object/object.component';
@@ -36,13 +36,15 @@ export class App implements OnInit{
       this.vals.push(this.valo[i][0]);
     }
     this.vists=this.vvistas.getVistas();
+    console.log(this.vals);
    }
 
-  ngOnInit() {
+  ngDocheck(){
   }
 
   addItem(newItem: string) {
     this.vists=this.vvistas.getVistas();
+    console.log(this.vists);
   }
 
 }
