@@ -24,9 +24,7 @@ export class EstadoService {
 
 
   
-
-  constructor() {
-  }
+  constructor() {}
   public setEstado(v:Edo):void{
       this.estado.push(v);
   }
