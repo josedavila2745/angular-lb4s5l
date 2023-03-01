@@ -22,10 +22,13 @@ export class ObjectComponent implements OnInit{
   clicks:Edo[];
   click1:Edo;
   click2:Edo;
-  constructor(public edo: EstadoService) {}
-  ngOnInit(){
+  constructor(public edo: EstadoService) {
     this.dorso = (this.dorso1) ? this.frontal : this.dorso0;
     console.log(this.dorso)
+  }
+  ngOnInit(){
+    
+    
 
   }
   fueClickado() {

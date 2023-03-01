@@ -23,10 +23,7 @@ export class App implements OnInit{
   items:number[] = [];
   anterior=-1;  actual=-1;
   constructor(private vvistas: EstadoService) {
-    vvistas.getVistas
-   }
-
-  ngOnInit() {
+    vvistas.getVistas;
     this.imgs=this.vvistas.getvVistas();
     this.vala=this.imgs.map((e,index)=>[index, Math.random()]);
     this.valo=this.vala.sort(function(a, b){return a[1] - b[1]});
@@ -38,7 +35,9 @@ export class App implements OnInit{
     for (var i = 0; i < 8; i++) {
       this.vals.push(this.valo[i][0]);
     }
+   }
 
+  ngOnInit() {
   }
 
   addItem(newItem: string) {
