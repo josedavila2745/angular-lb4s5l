@@ -1,4 +1,4 @@
-import { Component, Input,Output, EventEmitter  } from '@angular/core';
+import { Component,  OnInit, Input,Output, EventEmitter  } from '@angular/core';
 import { EstadoService } from '../services/estado.service';
 import{Edo} from '../models'
 
@@ -8,7 +8,7 @@ import{Edo} from '../models'
   templateUrl: './object.component.html',
   styleUrls: ['./object.component.css']
 })
-export class ObjectComponent {
+export class ObjectComponent implements OnInit{
   @Input() ido!     : number;
   @Input() img!     : number;
   @Input() frente!  : string;
@@ -16,13 +16,18 @@ export class ObjectComponent {
   @Output() clickado = new EventEmitter<string>();
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   frontal = this.frente;
-  dorso = (this.dorso1) ? this.frontal : this.dorso0;
+  dorso!:string ;
   nocolapsado = 1;
   endorso = 1;
   clicks:Edo[];
   click1:Edo;
   click2:Edo;
   constructor(public edo: EstadoService) {}
+  ngOnInit(){
+    this.dorso = (this.dorso1) ? this.frontal : this.dorso0;
+    console.log(this.dorso)
+
+  }
   fueClickado() {
     if(this.nocolapsado){
       this.clicks=this.edo.getEstado();
