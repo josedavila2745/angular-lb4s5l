@@ -14,23 +14,28 @@ export class ObjectComponent implements OnInit{
   @Input() frente!  : string;
   @Input() dorso1!  : number;
   @Output() clickado = new EventEmitter<string>();
-
+  dorso:string=''
   dorso0 = "https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fdorso2.jpg?alt=media&token=31b763f4-cfc5-4780-baae-9add3b291eb3";
   
-  frontal = this.frente;
-  dorso= this.dorso0;
+  frontal = this.frente; 
+
   nocolapsado = 1;
   endorso = 1;
   clicks:Edo[];
   click1:Edo;
   click2:Edo;
   constructor(public edo: EstadoService) {
+     if(this.dorso1){
+    this.dorso= this.frente;
+  }else{
+    this.dorso= this.dorso0;
+  }
 
   }
   ngOnInit(){
     
    // this.dorso = (this.dorso1) ? this.frontal : this.dorso0;
-    console.log(this.frente) 
+    
 
   }
   fueClickado() {
