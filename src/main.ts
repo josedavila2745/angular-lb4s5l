@@ -13,7 +13,7 @@ import { EstadoService } from './services/estado.service';
   templateUrl: './main.html',
   styleUrls: ['./main.css']
 })
-export class App implements OnInit{
+export class App implements DoCheck{
   name = 'Angular';
   title = 'mem-app';
   imgs: ImgsType[]=[];
@@ -39,7 +39,8 @@ export class App implements OnInit{
     console.log(this.vals);
    }
 
-  ngDocheck(){
+  ngDoCheck(){
+    this.vists=this.vvistas.getVistas();
   }
 
   addItem(newItem: string) {
