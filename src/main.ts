@@ -46,7 +46,6 @@ export class App implements OnInit, DoCheck{
    }
 
   ngDoCheck(){
-    this.vists=this.vvistas.getVistas();
     console.log(this.vists);
   }
 
