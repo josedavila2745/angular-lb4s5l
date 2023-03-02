@@ -47,6 +47,7 @@ export class ObjectComponent implements OnInit{
       let long=this.clicks.length;
       if(this.clicks[long-1].ido!=this.ido){
         this.dorso=this.frente;
+        console.log("cuentas: ", this.clicks[long-1].conteo); 
         this.edo.setEstado({conteo:(this.clicks[long-1].conteo+1),img:this.img,ido:this.ido});
         //setTimeout(this.cambia, 500);
         if (this.clicks[long-1].conteo > 1){
