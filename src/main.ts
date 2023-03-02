@@ -39,7 +39,7 @@ export class App implements OnInit, DoCheck{
     for (var i = 0; i < 8; i++) {
       this.vals.push(this.valo[i][0]);
     }
-    this.vists=this.vvistas.getVistas();
+    this.vvistas.getVistas$().subscribe(v=>    this.vists=v);
     console.log(this.vals);
 
    }
