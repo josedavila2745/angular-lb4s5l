@@ -1,5 +1,5 @@
 import 'zone.js/dist/zone';
-import { Component,  DoCheck } from '@angular/core';
+import { Component,  OnInit, DoCheck } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { ObjectComponent } from './object/object.component';
@@ -13,7 +13,7 @@ import { EstadoService } from './services/estado.service';
   templateUrl: './main.html',
   styleUrls: ['./main.css']
 })
-export class App implements DoCheck{
+export class App implements OnInit, DoCheck{
   name = 'Angular';
   title = 'mem-app';
   imgs: ImgsType[]=[];
@@ -24,7 +24,11 @@ export class App implements DoCheck{
   items:number[] = [];
   anterior=-1;  actual=-1;
   constructor(private vvistas: EstadoService) {
+
+   }
+   ngOnInit(){
     this.imgs=this.vvistas.getvVistas();
+    this.vvistas.setVistas(=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
     this.vala=this.imgs.map((e,index)=>[index, Math.random()]);
     this.valo=this.vala.sort(function(a, b){return a[1] - b[1]});
     for (var i = 0; i < 8; i++) {
@@ -37,6 +41,7 @@ export class App implements DoCheck{
     }
     this.vists=this.vvistas.getVistas();
     console.log(this.vals);
+
    }
 
   ngDoCheck(){

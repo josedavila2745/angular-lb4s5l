@@ -7,7 +7,7 @@ import{Edo, ImgsType} from '../models'
 })
 export class EstadoService {
   private estado:Edo[]=[{conteo:0,img:-1,ido:-1}];
-  private vistas:number[]=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  private vistas:number[];
   private vistas$:Subject<number[]>;
   private vvistas:ImgsType[]=[
     {id:0,name:'Batido',                  url:'https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fbatido.png?alt=media&token=b4c6c9ec-e931-4ce2-a94d-a8e1e5083ea8'},
