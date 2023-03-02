@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import{Edo, ImgsType} from '../models'
 
 @Injectable({
@@ -39,6 +39,9 @@ export class EstadoService {
   }
   public getVistas():number[]{
     return(this.vistas);}  
+  
+    public getVistas$():Observable<number[]>{
+      return(this.vistas$.asObservable());}  
 
   public setvVistas(v:ImgsType[]):void{
       this.vvistas=v;
