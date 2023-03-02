@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import{Edo, ImgsType} from '../models'
 
 @Injectable({
@@ -7,6 +8,7 @@ import{Edo, ImgsType} from '../models'
 export class EstadoService {
   private estado:Edo[]=[{conteo:0,img:-1,ido:-1}];
   private vistas:number[]=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  private vistas$:Subject<number[]>;
   private vvistas:ImgsType[]=[
     {id:0,name:'Batido',                  url:'https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fbatido.png?alt=media&token=b4c6c9ec-e931-4ce2-a94d-a8e1e5083ea8'},
     {id:1,name:'Bicarbonato',             url:'https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fbicarbonato.png?alt=media&token=c8e96150-f7f5-44a5-961a-c23d09ca7617'},
@@ -21,7 +23,10 @@ export class EstadoService {
     {id:10,name:'Sal de Maras',           url:'https://firebasestorage.googleapis.com/v0/b/memoria-18394.appspot.com/o/imgs%2Fsal_de_maras.png?alt=media&token=574e27d8-e337-404d-8b63-a6f98cbc5a56'},
   ];
   
-  constructor() {}
+  constructor() {
+    this.vistas=[];
+    this.vistas$= new Subject();
+  }
   public setEstado(v:Edo):void{
       this.estado.push(v);
   }
@@ -30,6 +35,7 @@ export class EstadoService {
   
   public setVistas(v:number[]):void{
       this.vistas=v;
+      this.vistas$.next(this.vistas);
   }
   public getVistas():number[]{
     return(this.vistas);}  
