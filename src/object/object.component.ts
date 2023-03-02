@@ -49,25 +49,23 @@ export class ObjectComponent implements OnInit{
         this.dorso=this.frente;
         this.edo.setEstado({conteo:(this.clicks[long-1].conteo+1),img:this.img,ido:this.ido});
         //setTimeout(this.cambia, 500);
+        if (this.clicks[long-1].conteo > 1){
+          this.mvistas=this.edo.getVistas();
+         if(this.clicks[long-1].img==this.clicks[long-2].img)
+            {
+              let obj1=this.clicks[long-1].ido; let obj2=this.clicks[long-2].ido;
+              this.mvistas[obj1]=1; this.mvistas[obj2]=1;
+            }
+         this.edo.setEstado({conteo:0,img:-1,ido:-1});
+         this.edo.setVistas(this.mvistas);
+         this.clickado.emit(" ");        
+       }
       }
-      if (this.clicks[long-1].conteo > 1){
-         this.mvistas=this.edo.getVistas();
-        if(this.clicks[long-1].img==this.clicks[long-2].img)
-           {
-             let obj1=this.clicks[long-1].ido; let obj2=this.clicks[long-2].ido;
-             this.mvistas[obj1]=1; this.mvistas[obj2]=1;
-           }
-        this.edo.setEstado({conteo:0,img:-1,ido:-1});
-        this.edo.setVistas(this.mvistas);
-        this.clickado.emit(" ");        
-      }
+
     }   
   }
 
-  ngDoCheck(){
-    this.vists=this.edo.getVistas();
-  }
-
+ 
  /* ngDoCheck() {
 
 

@@ -41,11 +41,12 @@ export class App implements DoCheck{
 
   ngDoCheck(){
     this.vists=this.vvistas.getVistas();
+    console.log(this.vists);
   }
 
   addItem(newItem: string) {
     this.vists=this.vvistas.getVistas();
-    console.log(this.vists);
+ 
   }
 
 }
