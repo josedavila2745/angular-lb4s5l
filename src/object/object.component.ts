@@ -50,18 +50,17 @@ export class ObjectComponent implements OnInit{
         console.log("cuentas: ", this.clicks[long-1].conteo); 
         this.edo.setEstado({conteo:(this.clicks[long-1].conteo+1),img:this.img,ido:this.ido});
         //setTimeout(this.cambia, 500);
-        if (this.clicks[long-1].conteo > 1){
-          this.mvistas=this.edo.getVistas();
-         if(this.clicks[long-1].img==this.clicks[long-2].img)
+        this.mvistas=this.edo.getVistas();
+        if(this.clicks[long-1].img==this.img)
             {
-              let obj1=this.clicks[long-1].ido; let obj2=this.clicks[long-2].ido;
+              let obj1=this.clicks[long-1].ido; let obj2=this.ido;
               this.mvistas[obj1]=1; this.mvistas[obj2]=1;
             }
-         this.edo.setEstado({conteo:0,img:-1,ido:-1});
-         this.edo.setVistas(this.mvistas);
-         this.clickado.emit(" ");        
+        this.edo.setEstado({conteo:0,img:-1,ido:-1});
+        this.edo.setVistas(this.mvistas);
+        this.clickado.emit(" ");        
        }
-      }
+      
 
     }   
   }
