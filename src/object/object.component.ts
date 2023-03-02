@@ -29,7 +29,7 @@ export class ObjectComponent implements OnInit, DoCheck{
   click2:Edo;
   constructor(public edo: EstadoService) { }
 ngDoCheck(): void {
- this.dorso=(this.endorso)?this.dorso0:this.frontal;
+ //this.dorso=(this.endorso)?this.dorso0:this.frontal;
 }
   ngOnInit(){
     if(this.dorso1){
