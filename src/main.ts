@@ -28,7 +28,7 @@ export class App implements OnInit, DoCheck{
    }
    ngOnInit(){
     this.imgs=this.vvistas.getvVistas();
-    this.vvistas.setVistas(=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+    this.vvistas.setVistas([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
     this.vala=this.imgs.map((e,index)=>[index, Math.random()]);
     this.valo=this.vala.sort(function(a, b){return a[1] - b[1]});
     for (var i = 0; i < 8; i++) {
