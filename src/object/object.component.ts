@@ -1,4 +1,4 @@
-import { Component,  OnInit, Input,Output, EventEmitter  } from '@angular/core';
+import { Component,  OnInit, Input,Output, EventEmitter, DoCheck  } from '@angular/core';
 import { EstadoService } from '../services/estado.service';
 import{Edo} from '../models'
 
@@ -8,7 +8,7 @@ import{Edo} from '../models'
   templateUrl: './object.component.html',
   styleUrls: ['./object.component.css']
 })
-export class ObjectComponent implements OnInit{
+export class ObjectComponent implements OnInit, DoCheck{
   @Input() ido!     : number;
   @Input() img!     : number;
   @Input() frente!  : string;
@@ -28,10 +28,13 @@ export class ObjectComponent implements OnInit{
   click1:Edo;
   click2:Edo;
   constructor(public edo: EstadoService) { }
+ngDoCheck(): void {
+ this.dorso=(this.endorso)?this.dorso0:this.frontal;
+}
   ngOnInit(){
     if(this.dorso1){
       this.dorso= this.dorso0;
-      this.dorso= this.frente;
+      this.dorso= this.frontal;
     }else{
       this.dorso= this.dorso0;
     }
@@ -55,6 +58,7 @@ export class ObjectComponent implements OnInit{
             {
               let obj1=this.clicks[long-1].ido; let obj2=this.ido;
               this.mvistas[obj1]=1; this.mvistas[obj2]=1;
+              this.endorso=0;
             }
         if (this.clicks[long-1].conteo==1){this.edo.setEstado({conteo:0,img:-1,ido:-1});}
         this.edo.setVistas(this.mvistas);

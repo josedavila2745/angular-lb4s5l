@@ -1,5 +1,5 @@
 import 'zone.js/dist/zone';
-import { Component,  OnInit, DoCheck } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { ObjectComponent } from './object/object.component';
@@ -13,7 +13,7 @@ import { EstadoService } from './services/estado.service';
   templateUrl: './main.html',
   styleUrls: ['./main.css']
 })
-export class App implements OnInit, DoCheck{
+export class App implements OnInit{
   name = 'Angular';
   title = 'mem-app';
   imgs: ImgsType[]=[];
@@ -45,9 +45,7 @@ export class App implements OnInit, DoCheck{
 
    }
 
-  ngDoCheck(){
-    console.log(this.vists);
-  }
+
 
   addItem(newItem: string) {
     this.vists=this.vvistas.getVistas();
