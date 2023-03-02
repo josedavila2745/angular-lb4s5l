@@ -56,7 +56,7 @@ export class ObjectComponent implements OnInit{
               let obj1=this.clicks[long-1].ido; let obj2=this.ido;
               this.mvistas[obj1]=1; this.mvistas[obj2]=1;
             }
-        this.edo.setEstado({conteo:0,img:-1,ido:-1});
+        if (this.clicks[long-1].conteo==1){this.edo.setEstado({conteo:0,img:-1,ido:-1});}
         this.edo.setVistas(this.mvistas);
         this.clickado.emit(" ");        
        }
