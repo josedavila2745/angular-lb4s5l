@@ -33,7 +33,8 @@ export class ObjectComponent implements OnInit, DoCheck{
  //this.dorso=(this.endorso)?this.dorso0:this.frontal;
  if(this.endorso==0){
  let jj= this.mvistas=this.edo.getVistas();
- if(jj[this.ido]==1){this.dorso=this.frontal}else{this.dorso=this.dorso0}
+ this.dorso=this.dorso0;
+ if(jj[this.ido]==1){this.dorso=this.frontal};
  this.endorso=1;
  }
 }
