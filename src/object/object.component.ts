@@ -30,6 +30,8 @@ export class ObjectComponent implements OnInit, DoCheck{
   constructor(public edo: EstadoService) { }
 ngDoCheck(): void {
  //this.dorso=(this.endorso)?this.dorso0:this.frontal;
+ let jj= this.mvistas=this.edo.getVistas();
+ if(jj[this.ido]==1){this.dorso=this.frontal}else{this.dorso=this.dorso0}
 }
   ngOnInit(){
     if(this.dorso1){
@@ -44,12 +46,14 @@ ngDoCheck(): void {
 
   }
   fueClickado() {
-    if(this.nocolapsado){
       this.clicks=this.edo.getEstado();
       //console.log("clicks: ", this.clicks); 
       let long=this.clicks.length;
       if(this.clicks[long-1].ido!=this.ido){
         this.dorso=this.frente;
+        for(let i=1; i<2000;i++){
+          let y=0;
+        }
         console.log("cuentas: ", this.clicks[long-1].conteo); 
         this.edo.setEstado({conteo:(this.clicks[long-1].conteo+1),img:this.img,ido:this.ido});
         //setTimeout(this.cambia, 500);
@@ -66,7 +70,7 @@ ngDoCheck(): void {
        }
       
 
-    }   
+
   }
 
  
