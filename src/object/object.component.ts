@@ -30,13 +30,13 @@ export class ObjectComponent implements OnInit, DoCheck{
   constructor(public edo: EstadoService) { }
 
   ngDoCheck(): void {
- //this.dorso=(this.endorso)?this.dorso0:this.frontal;
+ /*this.dorso=(this.endorso)?this.dorso0:this.frontal;
  if(this.endorso==0){
  let jj= this.mvistas=this.edo.getVistas();
  this.dorso=this.dorso0;
  if(jj[this.ido]==1){this.dorso=this.frontal};
  this.endorso=1;
- }
+ }*/
 }
   ngOnInit(){
     if(this.dorso1){
