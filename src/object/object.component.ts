@@ -28,10 +28,14 @@ export class ObjectComponent implements OnInit, DoCheck{
   click1:Edo;
   click2:Edo;
   constructor(public edo: EstadoService) { }
-ngDoCheck(): void {
+
+  ngDoCheck(): void {
  //this.dorso=(this.endorso)?this.dorso0:this.frontal;
+ if(this.endorso==0){
  let jj= this.mvistas=this.edo.getVistas();
  if(jj[this.ido]==1){this.dorso=this.frontal}else{this.dorso=this.dorso0}
+ this.endorso=1;
+ }
 }
   ngOnInit(){
     if(this.dorso1){
@@ -62,11 +66,12 @@ ngDoCheck(): void {
             {
               let obj1=this.clicks[long-1].ido; let obj2=this.ido;
               this.mvistas[obj1]=1; this.mvistas[obj2]=1;
-              this.endorso=0;
+              
             }
         if (this.clicks[long-1].conteo==1){this.edo.setEstado({conteo:0,img:-1,ido:-1});}
         this.edo.setVistas(this.mvistas);
         this.clickado.emit(" ");        
+        this.endorso=0;
        }
       
 
