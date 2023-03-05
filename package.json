@@ -2,6 +2,9 @@
   "name": "qgnioqqrg.github",
   "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
